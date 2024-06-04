@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +18,7 @@ import { DetailArticleComponent } from './composants/detail-article/detail-artic
 import { PaginationComponent } from './composants/pagination/pagination.component';
 import { BouttonActionsComponent } from './composants/boutton-actions/boutton-actions.component';
 import { NouvelArticleComponent } from './pages/Article/nouvel-article/nouvel-article.component';
+import { httpInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,9 +37,12 @@ import { NouvelArticleComponent } from './pages/Article/nouvel-article/nouvel-ar
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

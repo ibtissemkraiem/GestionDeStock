@@ -3,28 +3,47 @@
     <div class="card justify-content-md-center">
         <div class="card-header text-center" >
          <h3> Se connecter</h3> 
+
           </div>
-        <div class="card-body">
-            <div class="mb-3">
-                
-                <input type="email" class="form-control"  placeholder="E-mail">
-              </div>
+
+
+          <form  *ngIf="!isLoggedIn;else Block"
+
+          name="form"
+          (ngSubmit)="onSubmit()"
+          #f="ngForm"
+          >
+            <div class="card-body">
               <div class="mb-3">
-                
-                <input type="password" class="form-control" placeholder="Mot de passe">
-              </div>
+                  
+                  <input  #username="ngModel" [(ngModel)]="form.username" name="username" type="username" class="form-control"  placeholder="username">
+                </div>
+                <div class="mb-3">
+                  
+                  <input #password="ngModel" [(ngModel)]="form.password" name="password" type="password" class="form-control" placeholder="Mot de passe">
+                </div>
+  
+                <div class="mb-3 d-flex justify-content-between">
+                  <a [routerLink]="['/inscription']" class="btn btn-link">S'inscrire</a>
+                  <button type="submit" class="btn btn-primary">
+  
+                     <i class="fa-solid fa-check"></i>&nbsp; Se connecter</button>
+                  
+                  
+                  
+                </div>
+  
+          </div>
 
-              <div class="mb-3 d-flex justify-content-between">
-                <a [routerLink]="['/inscription']" class="btn btn-link">S'inscrire</a>
-                <button type="button" class="btn btn-primary">
 
-                   <i class="fa-solid fa-check"></i>&nbsp; Se connecter</button>
-                
-                
-                
-              </div>
 
-        </div>
+          </form>
+          <ng-template #Block>
+            <h1>Hello..</h1>
+
+          </ng-template>
+
+       
     </div>
 
 </div>

@@ -6,6 +6,7 @@ import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.co
 import { PageStatistiquesComponent } from './pages/page-statistiques/page-statistiques.component';
 import { PageArticleComponent } from './pages/Article/page-article/page-article.component';
 import { NouvelArticleComponent } from './pages/Article/nouvel-article/nouvel-article.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
 {  path:'login',
@@ -17,17 +18,24 @@ const routes: Routes = [
 
 {  path:'',
   component: PageDashboardComponent,
+  canActivateChild:[AuthGuard],
+
   children:[
    { path:'statistiques',
-   component: PageStatistiquesComponent
+   component: PageStatistiquesComponent,
+   
+
 
    },
    { path:'articles',
-   component: PageArticleComponent 
+   component: PageArticleComponent ,
+   canActivate:[AuthGuard]
+
 
    },
    { path:'nouvelarticle',
-   component: NouvelArticleComponent 
+   component: NouvelArticleComponent ,
+   canActivate:[AuthGuard]
 
    }
 
