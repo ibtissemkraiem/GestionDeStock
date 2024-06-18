@@ -1,0 +1,57 @@
+
+<div class="col mb-3">
+      
+
+    <div class="col-md-12 mb-3">
+        <img src="assets/product.png" class="rounded-circle " width="200px"  height="200px">
+
+    </div>
+    <hr>
+    <form   name="form"
+    (ngSubmit)="onSubmit()"
+    #f="ngForm">
+
+    <div class="col-md-12">
+        <div class="col-md-12mb-3">
+
+            <h2>Modifier L'article</h2>
+        </div>
+        <div class="col-md-12">
+         
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" [(ngModel)]="Article.codeArticle"  name="codeArticle"    #codeArticle="ngModel" class="form-control" placeholder="Code Article">
+                    </div>
+                    
+
+                    <div class="col">
+                        <input type="text" [(ngModel)]="Article.designation" name="designation" #designation="ngModel" class="form-control" placeholder="Designation">
+                    </div>
+                <div class="col">
+                        <input type="text" [(ngModel)]="Article.prixHT" name="prixHT" #prixHT="ngModel" class="form-control" placeholder="Prix HT">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" [(ngModel)]="Article.prixTTC" name="prixTTC" #prixTTC="ngModel" class="form-control" placeholder="prixTTC">
+                    </div>
+                   
+
+                </div>
+
+            
+
+        </div>
+
+
+        <div class="col-md-12 text-right">
+            <button class="btn btn-danger m-3">Annuler</button>
+            <button  type="submit"    class="btn btn-primary m-3">Update</button>
+    
+        </div>
+
+    </div>
+</form>
+
+
+</div>

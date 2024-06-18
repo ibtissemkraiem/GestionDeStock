@@ -1,0 +1,29 @@
+<div class="container">
+    <h2 class="text-center"> List ofCommandes
+
+    </h2>
+    <table class="table table-striped">
+        <thead>
+
+            <tr>
+             <th>ID</th>
+             <th>Order Number</th>
+             <th>Client</th>
+             <th>Status</th>
+             <th>Total Amount</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let commande of commandes">
+                <td>{{commande.idCommande}}</td>
+                <td>{{commande.orderNumber}}</td>
+                <td>{{commande.user?.username}}</td>
+                <td>{{commande.status_Commande}}</td>
+                <td>{{commande.totalAmount}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

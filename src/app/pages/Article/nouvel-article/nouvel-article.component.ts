@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
 import { CategorieService } from 'src/app/services/categorie.service';
 
@@ -7,7 +7,7 @@ import { CategorieService } from 'src/app/services/categorie.service';
   templateUrl: './nouvel-article.component.html',
   styleUrls: ['./nouvel-article.component.scss']
 })
-export class NouvelArticleComponent {
+export class NouvelArticleComponent implements OnInit{
 
   form: any = {
     designation: null,
@@ -73,5 +73,8 @@ export class NouvelArticleComponent {
     });
 
   }
+
+
+  
 
 }

@@ -7,6 +7,7 @@ import { PageStatistiquesComponent } from './pages/page-statistiques/page-statis
 import { PageArticleComponent } from './pages/Article/page-article/page-article.component';
 import { NouvelArticleComponent } from './pages/Article/nouvel-article/nouvel-article.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CommandeListComponent } from './composants/commande-list/commande-list.component';
 
 const routes: Routes = [
 {  path:'login',
@@ -29,6 +30,12 @@ const routes: Routes = [
    },
    { path:'articles',
    component: PageArticleComponent ,
+   canActivate:[AuthGuard]
+
+
+   },
+   { path:'ListCommandes',
+   component: CommandeListComponent ,
    canActivate:[AuthGuard]
 
 

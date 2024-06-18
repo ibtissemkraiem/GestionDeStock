@@ -19,6 +19,7 @@ import { PaginationComponent } from './composants/pagination/pagination.componen
 import { BouttonActionsComponent } from './composants/boutton-actions/boutton-actions.component';
 import { NouvelArticleComponent } from './pages/Article/nouvel-article/nouvel-article.component';
 import { httpInterceptorProviders } from './_helpers/auth.interceptor';
+import { CommandeListComponent } from './composants/commande-list/commande-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { httpInterceptorProviders } from './_helpers/auth.interceptor';
     DetailArticleComponent,
     PaginationComponent,
     BouttonActionsComponent,
-    NouvelArticleComponent
+    NouvelArticleComponent,
+    CommandeListComponent
   ],
   imports: [
     BrowserModule,
