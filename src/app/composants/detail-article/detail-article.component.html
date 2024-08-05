@@ -36,7 +36,7 @@
                 <i class="fax fa-info-circle"></i>
                  </div>
 
-                 <div class="col-md-11">Désignation</div>
+                 <div class="col-md-11">{{data.designation}}</div>
 
         </div>
         <div class="row ">
@@ -44,7 +44,7 @@
                 <i class="fax fa-info-circle"></i>
                  </div>
 
-                 <div class="col-md-11">Prix unitaire</div>
+                 <div class="col-md-11">{{data.idArticle}}</div>
 
         </div>
         <div class="row ">
@@ -91,7 +91,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <button type="button" class="btn btn-link ">Modifier</button>
+            <button type="button" class="btn btn-link " (click)="modifierArticle()">Modifier</button>
         </div>
         <div class="col-md-4">
             <button type="button" class="btn btn-link ">Supprimer</button>

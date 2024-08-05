@@ -20,6 +20,7 @@ import { BouttonActionsComponent } from './composants/boutton-actions/boutton-ac
 import { NouvelArticleComponent } from './pages/Article/nouvel-article/nouvel-article.component';
 import { httpInterceptorProviders } from './_helpers/auth.interceptor';
 import { CommandeListComponent } from './composants/commande-list/commande-list.component';
+import { UpdateArticleComponent } from './pages/Article/update-article/update-article.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CommandeListComponent } from './composants/commande-list/commande-list.
     PaginationComponent,
     BouttonActionsComponent,
     NouvelArticleComponent,
-    CommandeListComponent
+    CommandeListComponent,
+    UpdateArticleComponent
   ],
   imports: [
     BrowserModule,

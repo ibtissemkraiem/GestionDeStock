@@ -8,6 +8,7 @@ import { PageArticleComponent } from './pages/Article/page-article/page-article.
 import { NouvelArticleComponent } from './pages/Article/nouvel-article/nouvel-article.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CommandeListComponent } from './composants/commande-list/commande-list.component';
+import { UpdateArticleComponent } from './pages/Article/update-article/update-article.component';
 
 const routes: Routes = [
 {  path:'login',
@@ -19,7 +20,7 @@ const routes: Routes = [
 
 {  path:'',
   component: PageDashboardComponent,
-  canActivateChild:[AuthGuard],
+  //canActivateChild:[AuthGuard],
 
   children:[
    { path:'statistiques',
@@ -36,7 +37,7 @@ const routes: Routes = [
    },
    { path:'ListCommandes',
    component: CommandeListComponent ,
-   canActivate:[AuthGuard]
+   
 
 
    },
@@ -44,7 +45,17 @@ const routes: Routes = [
    component: NouvelArticleComponent ,
    canActivate:[AuthGuard]
 
-   }
+   },
+   { path:'nouvelarticle/:idArticle',
+    component: NouvelArticleComponent ,
+    canActivate:[AuthGuard]
+ 
+    },
+    { path:'updatearticle/:idArticle',
+      component: UpdateArticleComponent ,
+      canActivate:[AuthGuard]
+   
+      }
 
   ]
 },

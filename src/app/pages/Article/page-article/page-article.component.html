@@ -18,12 +18,10 @@
 
 
     <div class=" col row m-3">
-        <app-detail-article></app-detail-article>
+        
 
-        <app-detail-article></app-detail-article>
-        <app-detail-article></app-detail-article>
-        <app-detail-article></app-detail-article>
-        <app-detail-article></app-detail-article>
+        <app-detail-article  *ngFor="let article of articles" [data]="article"></app-detail-article>
+       
     </div>
 
 
