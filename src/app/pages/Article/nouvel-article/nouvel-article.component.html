@@ -1,67 +1,58 @@
 <div class="col mb-3">
-      
 
     <div class="col-md-12 mb-3">
-        <img src="assets/product.png" class="rounded-circle " width="200px"  height="200px">
-
-    </div>
+        <img [src]="imageUrl" class="rounded-circle" width="200px" height="200px" alt="Uploaded Image">
+      </div>
     <hr>
-    <form   name="form"
-    (ngSubmit)="onSubmit()"
-    #f="ngForm">
-
-    <div class="col-md-12">
-        <div class="col-md-12mb-3">
-
-            <h2>Information de larticle</h2>
-        </div>
+    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
         <div class="col-md-12">
-         
+            <div class="col-md-12 mb-3">
+                <h2>Information de l'article</h2>
+            </div>
+            <div class="col-md-12">
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" [(ngModel)]="form.codeArticle"  name="codeArticle"    #codeArticle="ngModel" class="form-control" placeholder="Code Article">
+                        <input type="text" [(ngModel)]="form.codeArticle" name="codeArticle" #codeArticle="ngModel" class="form-control" placeholder="Code Article">
                     </div>
-
                     <div class="col">
                         <input type="text" [(ngModel)]="form.designation" name="designation" #designation="ngModel" class="form-control" placeholder="Designation">
                     </div>
-                <div class="col">
+                    <div class="col">
                         <input type="text" [(ngModel)]="form.prixHT" name="prixHT" #prixHT="ngModel" class="form-control" placeholder="Prix HT">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <input type="text" [(ngModel)]="form.prixTTC" name="prixTTC" #prixTTC="ngModel" class="form-control" placeholder="prixTTC">
+                        <input type="text" [(ngModel)]="form.prixTTC" name="prixTTC" #prixTTC="ngModel" class="form-control" placeholder="Prix TTC">
                     </div>
                     <div class="col">
-                        <input type="text" [(ngModel)]="form.tauxTVA" name="tauxTVA" #tauxTVA="ngModel" class="form-control" placeholder="Taux TVA ">
+                        <input type="text" [(ngModel)]="form.tauxTVA" name="tauxTVA" #tauxTVA="ngModel" class="form-control" placeholder="Taux TVA">
                     </div>
-
                     <div class="col">
-                       <select class="form-control" id="Ibti" name="idCategorie" [(ngModel)]="form.idCategorie" #idCategorie="ngModel" (change)="onSelectionChange($event)">
-                        <option *ngFor="let i of Categories" [value]="i.idCategorie">
-                           {{i.description_Categorie}} 
-
-                        </option>
-                   
-
-                       </select>
+                        <select class="form-control" id="Ibti" name="idCategorie" [(ngModel)]="form.idCategorie" #idCategorie="ngModel" (change)="onSelectionChange($event)">
+                            <option *ngFor="let i of Categories" [value]="i.idCategorie">
+                                {{i.description_Categorie}}
+                            </option>
+                        </select>
                     </div>
                 </div>
 
-            
+                <!-- Add file input field -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="imageFile">Upload Image:</label>
+                        <input type="file" id="imageFile" (change)="onFileChange($event)" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 text-right">
+                <button type="button" class="btn btn-danger m-3">Annuler</button>
+                <button type="submit" class="btn btn-primary m-3">Enregistrer</button>
+            </div>
 
         </div>
-
-
-        <div class="col-md-12 text-right">
-            <button class="btn btn-danger m-3">Annuler</button>
-            <button  type="submit"    class="btn btn-primary m-3">Enregistrer</button>
-    
-        </div>
-
-    </div>
-</form>
-
+    </form>
 
 </div>

@@ -1,6 +1,6 @@
 //import { Component } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import { CategorieService } from 'src/app/services/categorie.service';
 
@@ -34,7 +34,7 @@ export class UpdateArticleComponent implements OnInit {
   Articles?:[];
 
 data?:any[];
-idArticle?:number
+idArticle?:any
   //hatinehom fel constructeur bsh najmou nestaamlhom , 
   
 
@@ -43,6 +43,12 @@ idArticle?:number
 
   ngOnInit(): void {
     //subscribe khaterou ylaweej aala observable
+    //khdhe l id eli fel url hatha fel idArticle li declaitha mel fouk 
+    this.activatedRoute.params.subscribe(
+      router=>{
+        this.idArticle=this.activatedRoute.snapshot.params['idArticle']
+      }
+    )
 
     this.categorieservice.getAllCategories().subscribe({next:data=>{this.Categories=data ;
       console.log(this.Categories)
@@ -55,7 +61,7 @@ idArticle?:number
   //Je veux essayer de recupperer lid article : initialement
 //const idArticle =this.activatedRoute.snapshot.params.idArticle;
 
-this.activatedRoute.paramMap.subscribe(params => {
+/*this.activatedRoute.paramMap.subscribe(params => {
       const articleId = params.get('idArticle'); // Replace 'id' with your actual route parameter name
       console.log('Article ID:', articleId);
      // this.idArticle= +params.get('idArticle');
@@ -76,7 +82,7 @@ this.activatedRoute.paramMap.subscribe(params => {
         )
 
       }
-    });
+    });*/
     
 
   }
@@ -94,11 +100,12 @@ this.activatedRoute.paramMap.subscribe(params => {
     const { designation, codeArticle, prixHT,tauxTVA ,idCategorie,
      } = this.form;
     console.log(this.form);
+    const articleId =this.idArticle;
    // console.log(username);
    
 
 
-    this.articleservice.updateArticle(designation, codeArticle, prixHT,tauxTVA,idCategorie).subscribe({
+    this.articleservice.updateArticle(designation, codeArticle, prixHT,tauxTVA,idCategorie,this.idArticle).subscribe({
       next: data => {
         //console.log("hedha lid mtaa l onsubmit" + {articleId})
         console.log(data);
